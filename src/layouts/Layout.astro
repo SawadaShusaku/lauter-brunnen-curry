@@ -16,17 +16,21 @@ const { title, description = "本格的なスパイスカレーを提供する�
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Lauter Brunnen</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   </head>
   <body>
     <slot />
     
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-      import AOS from 'aos';
-      AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 100,
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true,
+          offset: 100,
+          delay: 100,
+        });
       });
     </script>
   </body>
