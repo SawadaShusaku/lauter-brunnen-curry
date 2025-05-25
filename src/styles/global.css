@@ -7,10 +7,18 @@
 @layer base {
   html {
     font-family: 'Noto Sans JP', sans-serif;
+    overflow-x: hidden;
   }
   
   body {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  * {
+    box-sizing: border-box;
   }
 }
 
@@ -29,6 +37,25 @@
   
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* モバイル対応の追加スタイル */
+  @media (max-width: 768px) {
+    .container-custom {
+      @apply px-3;
+    }
+    
+    header {
+      width: 100vw;
+      max-width: 100vw;
+    }
+    
+    nav {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 }
 

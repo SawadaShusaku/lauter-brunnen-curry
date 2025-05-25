@@ -8,13 +8,13 @@ import Footer from '../components/Footer.astro';
   <Header />
   
   <!-- ヒーローセクション -->
-  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden px-4 md:px-8 py-16">
+  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden w-full max-w-full">
     <img src="/curry_stand.png" alt="カレー屋外観" class="absolute inset-0 w-full h-full object-cover z-0" />
     <div class="absolute inset-0 bg-gradient-to-br from-curry-50/70 to-curry-800/80 z-10"></div>
     <div class="absolute inset-0 bg-black/20 z-20"></div>
-    <div class="relative z-30 text-center px-4">
+    <div class="relative z-30 text-center px-4 sm:px-6 lg:px-8 w-full max-w-full">
       <h1 
-        class="text-5xl md:text-7xl font-bold mb-6 text-blue-900 drop-shadow-lg" 
+        class="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 text-blue-900 drop-shadow-lg" 
         data-aos="zoom-in-bidirectional" 
         data-aos-duration="1200" 
         data-aos-delay="300"
@@ -24,7 +24,7 @@ import Footer from '../components/Footer.astro';
         Lauter Brunnen
       </h1>
       <br><br><br><br><br><br>
-      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white/90" data-aos="fade-up" data-aos-delay="200">
+      <p class="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white/90 px-2" data-aos="fade-up" data-aos-delay="200">
         <br>本場のスパイスを独自にブレンドし、<br><span class="font-bold text-curry-400 underline decoration-curry-600">香り高い本格カレー</span>をお届けします。<br>自然豊かなロケーションで、心も体も満たされるひとときを。
       </p>
       <div class="space-x-4" data-aos="fade-up" data-aos-delay="400">
@@ -34,7 +34,7 @@ import Footer from '../components/Footer.astro';
   <br>
 
   <!-- コンセプトセクション -->
-  <section id="concept" class="section-padding bg-white px-4 md:px-8 py-16">
+  <section id="concept" class="section-padding bg-white w-full max-w-full overflow-hidden">
     <div class="container-custom">
       <div class="text-center mb-20">
         <h2 class="text-4xl font-bold mb-6 text-blue-900 drop-shadow">Lauter Brunnenのこだわり</h2>
@@ -82,7 +82,7 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- メニューセクション -->
-  <section id="menu" class="section-padding bg-gray-50 px-4 md:px-8 py-16">
+  <section id="menu" class="section-padding bg-gray-50 w-full max-w-full overflow-hidden">
     <div class="container-custom">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-gray-900 mb-4" data-aos="flip-up-bidirectional" data-aos-duration="1000">
@@ -230,7 +230,7 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- アクセスセクション -->
-  <section id="access" class="section-padding bg-white px-4 md:px-8 py-16">
+  <section id="access" class="section-padding bg-white w-full max-w-full overflow-hidden">
     <div class="container-custom">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold mb-6 text-blue-900 drop-shadow">アクセス</h2>

@@ -1,9 +1,9 @@
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-  <nav class="container-custom">
-    <div class="flex items-center justify-between h-16">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm w-full overflow-hidden">
+  <nav class="w-full max-w-full">
+    <div class="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <!-- ロゴ -->
-      <div class="flex items-center">
-        <a href="/" class="text-2xl font-bold text-blue-900">
+      <div class="flex items-center flex-shrink-0">
+        <a href="/" class="text-xl sm:text-2xl font-bold text-blue-900 whitespace-nowrap">
           🍛 Lauter Brunnen
         </a>
       </div>
@@ -11,24 +11,24 @@
       <!-- デスクトップナビゲーション -->
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-8">
-          <a href="#home" class="text-gray-700 hover:text-curry-600 px-3 py-2 text-sm font-medium transition-colors">
+          <a href="#home" class="text-gray-700 hover:text-curry-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap">
             ホーム
           </a>
-          <a href="#concept" class="text-gray-700 hover:text-curry-600 px-3 py-2 text-sm font-medium transition-colors">
+          <a href="#concept" class="text-gray-700 hover:text-curry-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap">
             コンセプト
           </a>
-          <a href="#menu" class="text-gray-700 hover:text-curry-600 px-3 py-2 text-sm font-medium transition-colors">
+          <a href="#menu" class="text-gray-700 hover:text-curry-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap">
             メニュー
           </a>
-          <a href="#access" class="text-gray-700 hover:text-curry-600 px-3 py-2 text-sm font-medium transition-colors">
+          <a href="#access" class="text-gray-700 hover:text-curry-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap">
             アクセス
           </a>
         </div>
       </div>
 
       <!-- モバイルメニューボタン -->
-      <div class="md:hidden">
-        <button id="mobile-menu-button" class="text-gray-700 hover:text-curry-600 focus:outline-none">
+      <div class="md:hidden flex-shrink-0">
+        <button id="mobile-menu-button" class="text-gray-700 hover:text-curry-600 focus:outline-none p-2">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -37,8 +37,8 @@
     </div>
 
     <!-- モバイルメニュー -->
-    <div id="mobile-menu" class="md:hidden hidden">
-      <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+    <div id="mobile-menu" class="md:hidden hidden w-full">
+      <div class="px-4 pt-2 pb-3 space-y-1 bg-white border-t max-w-full">
         <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-curry-600 transition-colors">
           ホーム
         </a>
