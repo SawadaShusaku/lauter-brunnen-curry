@@ -20,6 +20,11 @@
   * {
     box-sizing: border-box;
   }
+  
+  /* セクションのスクロール位置調整 */
+  section[id] {
+    scroll-margin-top: 80px;
+  }
 }
 
 @layer components {
@@ -55,6 +60,11 @@
     nav {
       width: 100%;
       max-width: 100%;
+    }
+    
+    /* スマホ版でのヒーロー画像の位置調整 */
+    #home img {
+      object-position: 60% center;
     }
   }
 }
