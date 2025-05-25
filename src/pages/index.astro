@@ -1,16 +1,237 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Lauter Brunnen">
+  <Header />
+  
+  <!-- ヒーローセクション -->
+  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden px-4 md:px-8 py-16">
+    <img src="/curry_stand.png" alt="カレー屋外観" class="absolute inset-0 w-full h-full object-cover z-0" />
+    <div class="absolute inset-0 bg-gradient-to-br from-curry-50/70 to-curry-800/80 z-10"></div>
+    <div class="absolute inset-0 bg-black/20 z-20"></div>
+    <div class="relative z-30 text-center px-4">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 text-blue-900 drop-shadow-lg" data-aos="fade-up">
+        Lauter Brunnen
+      </h1>
+      <br><br><br><br><br><br>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white/90" data-aos="fade-up" data-aos-delay="200">
+        本場のスパイスを独自にブレンドし、<br><span class="font-bold text-curry-400 underline decoration-curry-600">香り高い本格カレー</span>をお届けします。<br>自然豊かなロケーションで、心も体も満たされるひとときを。
+      </p>
+      <div class="space-x-4" data-aos="fade-up" data-aos-delay="400">
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <!-- コンセプトセクション -->
+  <section id="concept" class="section-padding bg-white px-4 md:px-8 py-16">
+    <div class="container-custom">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl font-bold mb-6 text-blue-900 drop-shadow">Lauter Brunnenのこだわり</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-10">
+          <span class="font-bold text-curry-600"><br>厳選スパイス</span>と<span class="underline decoration-curry-400">新鮮な食材</span>を贅沢に使用し、<span class="bg-curry-100 px-2 rounded">独自ブレンド</span>で仕上げたカレーは、
+          <br><span class="italic text-curry-700">香り・コク・旨味</span>の三拍子。<br><br>
+          ひと口ごとに広がるスパイスの奥深さと、<span class="font-semibold text-blue-900">手間ひまかけた手作り</span>の温もりを感じてください。<br>
+          <span class="text-curry-500 font-bold">「ここでしか味わえない一皿」</span>を、ぜひご堪能ください。
+          <br>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-20 h-20 bg-curry-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-3xl">🌶️</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">本格スパイス</h3>
+          <p class="text-gray-600">
+            インドから直輸入した新鮮なスパイスを独自にブレンド。深い香りと味わいを実現しています。
+          </p>
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-20 h-20 bg-curry-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-3xl">🥬</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">新鮮な野菜</h3>
+          <p class="text-gray-600">
+            地元農家から仕入れる新鮮な野菜を使用。季節ごとの旬の味をお楽しみいただけます。
+          </p>
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-20 h-20 bg-curry-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-3xl">❤️</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">愛情込めて</h3>
+          <p class="text-gray-600">
+            一皿一皿、心を込めて手作り。お客様に笑顔をお届けすることが私たちの喜びです。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- メニューセクション -->
+  <section id="menu" class="section-padding bg-gray-50 px-4 md:px-8 py-16">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">
+          メニュー
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+          こだわりの食材で作る、バラエティ豊かなカレーをご用意しています
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- チキンカレー -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-48 bg-gradient-to-br from-curry-400 to-curry-600"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">チキンカレー</h3>
+            <p class="text-gray-600 mb-4">
+              柔らかく煮込んだチキンと香り豊かなスパイスの絶妙なハーモニー
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-curry-600">¥1,200</span>
+              <span class="text-sm text-gray-500">🌶️ 中辛</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ベジタブルカレー -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-48 bg-gradient-to-br from-green-400 to-green-600"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">ベジタブルカレー</h3>
+            <p class="text-gray-600 mb-4">
+              季節の野菜をたっぷり使った、ヘルシーで栄養満点のカレー
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-curry-600">¥1,000</span>
+              <span class="text-sm text-gray-500">🌶️ 甘口</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ビーフカレー -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+          <div class="h-48 bg-gradient-to-br from-red-400 to-red-600"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">ビーフカレー</h3>
+            <p class="text-gray-600 mb-4">
+              じっくり煮込んだ牛肉の旨味とスパイスが織りなす贅沢な味わい
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-curry-600">¥1,500</span>
+              <span class="text-sm text-gray-500">🌶️ 辛口</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- シーフードカレー -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+          <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">シーフードカレー</h3>
+            <p class="text-gray-600 mb-4">
+              新鮮な海の幸をふんだんに使った、海の恵みたっぷりのカレー
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-curry-600">¥1,400</span>
+              <span class="text-sm text-gray-500">🌶️ 中辛</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- キーマカレー -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+          <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-600"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">キーマカレー</h3>
+            <p class="text-gray-600 mb-4">
+              ひき肉と野菜の旨味が凝縮された、食べ応え抜群のドライカレー
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-curry-600">¥1,300</span>
+              <span class="text-sm text-gray-500">🌶️ 中辛</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- スペシャルカレー -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+          <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">スペシャルカレー</h3>
+            <p class="text-gray-600 mb-4">
+              シェフ特製の秘伝レシピで作る、当店自慢の限定カレー
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-curry-600">¥1,800</span>
+              <span class="text-sm text-gray-500">🌶️ 激辛</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- アクセスセクション -->
+  <section id="access" class="section-padding bg-white px-4 md:px-8 py-16">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-6 text-blue-900 drop-shadow">アクセス</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-8 leading-relaxed">
+          豊かな自然に囲まれた店舗で、皆さまのご来店を心よりお待ちしております。
+        </p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div data-aos="fade-right">
+          <h3 class="text-2xl font-semibold mb-8 text-curry-700">店舗情報</h3>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <span class="text-curry-600 mt-1">📍</span>
+              <div>
+                <p class="font-medium">住所</p>
+                <p class="text-gray-600">〒171-0043 東京都豊島区要町</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <span class="text-curry-600 mt-1">📞</span>
+              <div>
+                <p class="font-medium">電話番号</p>
+                <p class="text-gray-600">03-1234-5678</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <span class="text-curry-600 mt-1">🕐</span>
+              <div>
+                <p class="font-medium">営業時間</p>
+                <p class="text-gray-600">11:00 - 15:00（ラストオーダー 14:30）</p>
+                <p class="text-gray-600">定休日：日曜日</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <span class="text-curry-600 mt-1">🚃</span>
+              <div>
+                <p class="font-medium">アクセス</p>
+                <p class="text-gray-600">東京メトロ有楽町線・副都心線 要町駅 徒歩10分</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-aos="fade-left">
+          <div class="bg-gray-200 h-80 rounded-lg flex items-center justify-center">
+            <p class="text-gray-500">地図（Google Maps等を埋め込み）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,37 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "本格的なスパイスカレーを提供する現代的なカレー専門店" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Lauter Brunnen</title>
+  </head>
+  <body>
+    <slot />
+    
+    <script>
+      import AOS from 'aos';
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100,
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  @import '../styles/global.css';
+</style> 
