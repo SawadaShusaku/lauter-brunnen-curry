@@ -30,4 +30,67 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+}
+
+/* カスタム双方向アニメーション */
+@layer utilities {
+  /* フェードアップの双方向アニメーション */
+  [data-aos="fade-up-bidirectional"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  }
+  
+  [data-aos="fade-up-bidirectional"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* フェードレフトの双方向アニメーション */
+  [data-aos="fade-left-bidirectional"] {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  }
+  
+  [data-aos="fade-left-bidirectional"].aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* フェードライトの双方向アニメーション */
+  [data-aos="fade-right-bidirectional"] {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  }
+  
+  [data-aos="fade-right-bidirectional"].aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* ズームインの双方向アニメーション */
+  [data-aos="zoom-in-bidirectional"] {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+  }
+  
+  [data-aos="zoom-in-bidirectional"].aos-animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* フリップアップの双方向アニメーション */
+  [data-aos="flip-up-bidirectional"] {
+    opacity: 0;
+    transform: perspective(2500px) rotateX(-100deg);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  }
+  
+  [data-aos="flip-up-bidirectional"].aos-animate {
+    opacity: 1;
+    transform: perspective(2500px) rotateX(0deg);
+  }
 } 

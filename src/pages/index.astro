@@ -13,12 +13,19 @@ import Footer from '../components/Footer.astro';
     <div class="absolute inset-0 bg-gradient-to-br from-curry-50/70 to-curry-800/80 z-10"></div>
     <div class="absolute inset-0 bg-black/20 z-20"></div>
     <div class="relative z-30 text-center px-4">
-      <h1 class="text-5xl md:text-7xl font-bold mb-6 text-blue-900 drop-shadow-lg" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="300">
+      <h1 
+        class="text-5xl md:text-7xl font-bold mb-6 text-blue-900 drop-shadow-lg" 
+        data-aos="zoom-in-bidirectional" 
+        data-aos-duration="1200" 
+        data-aos-delay="300"
+        data-aos-anchor-placement="center-bottom"
+        data-aos-mirror="true"
+      >
         Lauter Brunnen
       </h1>
       <br><br><br><br><br><br>
       <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white/90" data-aos="fade-up" data-aos-delay="200">
-        本場のスパイスを独自にブレンドし、<br><span class="font-bold text-curry-400 underline decoration-curry-600">香り高い本格カレー</span>をお届けします。<br>自然豊かなロケーションで、心も体も満たされるひとときを。
+        <br>本場のスパイスを独自にブレンドし、<br><span class="font-bold text-curry-400 underline decoration-curry-600">香り高い本格カレー</span>をお届けします。<br>自然豊かなロケーションで、心も体も満たされるひとときを。
       </p>
       <div class="space-x-4" data-aos="fade-up" data-aos-delay="400">
       </div>
@@ -78,7 +85,7 @@ import Footer from '../components/Footer.astro';
   <section id="menu" class="section-padding bg-gray-50 px-4 md:px-8 py-16">
     <div class="container-custom">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4" data-aos="flip-up" data-aos-duration="1000">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4" data-aos="flip-up-bidirectional" data-aos-duration="1000">
           メニュー
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
@@ -88,7 +95,14 @@ import Footer from '../components/Footer.astro';
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- チキンカレー -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+        <div 
+          class="bg-white rounded-lg shadow-lg overflow-hidden" 
+          data-aos="fade-up-bidirectional" 
+          data-aos-delay="100" 
+          data-aos-duration="800"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-mirror="true"
+        >
           <img src="/chicken_curry.png" alt="チキンカレー" class="h-48 w-full object-cover" />
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">チキンカレー</h3>
@@ -103,7 +117,14 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- ベジタブルカレー -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
+        <div 
+          class="bg-white rounded-lg shadow-lg overflow-hidden" 
+          data-aos="fade-left-bidirectional" 
+          data-aos-delay="200" 
+          data-aos-duration="800"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-mirror="true"
+        >
           <img src="/vegetable_curry.png" alt="ベジタブルカレー" class="h-48 w-full object-cover" />
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">ベジタブルカレー</h3>
@@ -118,7 +139,14 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- ビーフカレー -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-right" data-aos-delay="300" data-aos-duration="800">
+        <div 
+          class="bg-white rounded-lg shadow-lg overflow-hidden" 
+          data-aos="fade-right-bidirectional" 
+          data-aos-delay="300" 
+          data-aos-duration="800"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-mirror="true"
+        >
           <img src="/beaf_curry.png" alt="ビーフカレー" class="h-48 w-full object-cover" />
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">ビーフカレー</h3>
@@ -133,7 +161,14 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- シーフードカレー -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+        <div 
+          class="bg-white rounded-lg shadow-lg overflow-hidden" 
+          data-aos="fade-up" 
+          data-aos-delay="400" 
+          data-aos-duration="800"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-mirror="true"
+        >
           <img src="/seafood_curry.png" alt="シーフードカレー" class="h-48 w-full object-cover" />
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">シーフードカレー</h3>
@@ -148,7 +183,14 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- キーマカレー -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+        <div 
+          class="bg-white rounded-lg shadow-lg overflow-hidden" 
+          data-aos="fade-left" 
+          data-aos-delay="500" 
+          data-aos-duration="800"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-mirror="true"
+        >
           <img src="/keema_curry.png" alt="キーマカレー" class="h-48 w-full object-cover" />
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">キーマカレー</h3>
@@ -163,7 +205,14 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- スペシャルカレー -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+        <div 
+          class="bg-white rounded-lg shadow-lg overflow-hidden" 
+          data-aos="fade-right" 
+          data-aos-delay="600" 
+          data-aos-duration="800"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-mirror="true"
+        >
           <img src="/special_curry.png" alt="スペシャルカレー" class="h-48 w-full object-cover" />
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">スペシャルカレー</h3>
