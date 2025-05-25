@@ -1,6 +1,6 @@
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm w-full overflow-hidden">
   <nav class="w-full max-w-full">
-    <div class="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="flex items-center justify-between h-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <!-- ロゴ -->
       <div class="flex items-center flex-shrink-0">
         <a href="/" class="text-xl sm:text-2xl font-bold text-blue-900 whitespace-nowrap">
@@ -73,8 +73,8 @@
       const target = document.querySelector(targetId);
       
       if (target) {
-        // ヘッダーの高さ（64px）+ 余白（16px）を考慮
-        const headerHeight = 80;
+        // ヘッダーの高さ（56px）+ 余白（14px）を考慮
+        const headerHeight = 70;
         const targetPosition = target.offsetTop - headerHeight;
         
         window.scrollTo({
