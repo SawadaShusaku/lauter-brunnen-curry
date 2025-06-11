@@ -8,13 +8,13 @@ import Footer from '../components/Footer.astro';
   <Header />
   
   <!-- ヒーローセクション -->
-  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden w-full max-w-full">
-    <img src="/curry_stand.png" alt="カレー屋外観" class="absolute inset-0 w-full h-full object-cover object-center sm:object-right-center z-0" />
+  <section id="home" class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+    <img src="/hattori_pictures/hattori_zigazou.png" alt="カレー屋外観" class="absolute inset-0 w-full h-full object-cover object-center z-0" />
     <div class="absolute inset-0 bg-gradient-to-br from-curry-50/70 to-curry-800/80 z-10"></div>
     <div class="absolute inset-0 bg-black/20 z-20"></div>
-    <div class="relative z-30 text-center px-4 sm:px-6 lg:px-8 w-full max-w-full">
+    <div class="relative z-30 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto -mt-24 sm:-mt-28 lg:-mt-36">
       <h1 
-        class="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 text-blue-900 drop-shadow-lg" 
+        class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-blue-900 drop-shadow-lg" 
         data-aos="zoom-in-bidirectional" 
         data-aos-duration="1200" 
         data-aos-delay="300"
@@ -23,20 +23,16 @@ import Footer from '../components/Footer.astro';
       >
         Lauter Brunnen
       </h1>
-      <br><br><br><br><br><br>
-      <p class="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white/90 px-2" data-aos="fade-up" data-aos-delay="200">
-        <br>本場のスパイスを独自にブレンドし、<br><span class="font-bold text-curry-400 underline decoration-curry-600">香り高い本格カレー</span>をお届けします。<br>自然豊かなロケーションで、心も体も満たされるひとときを。
+      <p class="text-lg sm:text-xl md:text-2xl mb-8 text-white/90 px-2 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+        本場のスパイスを独自にブレンドし、<br><span class="font-bold text-curry-400 underline decoration-curry-600">香り高い本格カレー</span>をお届けします。<br>心も体も満たされるひとときを。
       </p>
-      <div class="space-x-4" data-aos="fade-up" data-aos-delay="400">
-      </div>
     </div>
   </section>
-  <br>
 
   <!-- コンセプトセクション -->
   <section id="concept" class="section-padding bg-white w-full max-w-full overflow-hidden pb-20">
     <div class="container-custom">
-      <div class="text-center mb-24">
+      <div class="text-center mt-8 mb-22">
         <h2 class="text-4xl font-bold mb-8 text-blue-900 drop-shadow">Lauter Brunnen<br>のこだわり</h2>
         <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-10">
           <span class="font-bold text-curry-600"><br>厳選スパイス</span>と<span class="underline decoration-curry-400">新鮮な食材</span>を贅沢に使用し、<span class="bg-curry-100 px-2 rounded">独自ブレンド</span>で仕上げたカレーは、
@@ -89,7 +85,7 @@ import Footer from '../components/Footer.astro';
           メニュー
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          こだわりの食材で作る、バラエティ豊かなカレーをご用意しています
+          こだわりの食材で作る、バラエティ豊かなカレーと弁当をご用意しています
         </p>
       </div>
 
@@ -129,7 +125,7 @@ import Footer from '../components/Footer.astro';
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">ボリュームから揚げ弁当</h3>
             <p class="text-gray-600 mb-4">
-              季節の野菜をたっぷり使った、ヘルシーで栄養満点のカレー
+              サクサクジューシーなから揚げとご飯がたっぷり入った、ボリューム満点の弁当
             </p>
             <div class="flex justify-between items-center">
               <span class="text-2xl font-bold text-curry-600">¥1,000</span>
@@ -151,7 +147,7 @@ import Footer from '../components/Footer.astro';
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">ともちゃんのキーマカレー</h3>
             <p class="text-gray-600 mb-4">
-              じっくり煮込んだ牛肉の旨味とスパイスが織りなす贅沢な味わい
+              ひき肉と野菜の旨味が凝縮された、スパイス香る本格キーマカレー
             </p>
             <div class="flex justify-between items-center">
               <span class="text-2xl font-bold text-curry-600">¥1,000</span>
@@ -173,11 +169,11 @@ import Footer from '../components/Footer.astro';
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">ともちゃんのポークご飯</h3>
             <p class="text-gray-600 mb-4">
-              新鮮な海の幸をふんだんに使った、海の恵みたっぷりのカレー
+              柔らかく煮込んだ豚肉の旨味がご飯によく合う、満足感のある一品
             </p>
             <div class="flex justify-between items-center">
               <span class="text-2xl font-bold text-curry-600">¥1,000</span>
-              <span class="text-sm text-gray-500">🌶️ 中辛</span>
+              <span class="text-sm text-gray-500"></span>
             </div>
           </div>
         </div>
@@ -195,7 +191,7 @@ import Footer from '../components/Footer.astro';
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">ともちゃんの焼肉弁当</h3>
             <p class="text-gray-600 mb-4">
-              ひき肉と野菜の旨味が凝縮された、食べ応え抜群のドライカレー
+              香ばしく焼いた肉の旨味とタレの甘辛さが絶妙な、ガッツリ系弁当
             </p>
             <div class="flex justify-between items-center">
               <span class="text-2xl font-bold text-curry-600">¥1,000</span>
@@ -204,7 +200,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
 
-        <!-- ともちゃんの三食丼 -->
+        <!-- ともちゃんの三色丼 -->
         <div 
           class="bg-white rounded-lg shadow-lg overflow-hidden" 
           data-aos="fade-right" 
@@ -213,11 +209,11 @@ import Footer from '../components/Footer.astro';
           data-aos-anchor-placement="top-bottom"
           data-aos-mirror="true"
         >
-          <img src="/hattori_pictures/tomochan_sanshokudon.webp" alt="ともちゃんの三食丼" class="h-64 w-full object-cover" />
+          <img src="/hattori_pictures/tomochan_sanshokudon.webp" alt="ともちゃんの三色丼" class="h-64 w-full object-cover" />
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">ともちゃんの三食丼</h3>
+            <h3 class="text-xl font-semibold mb-2">ともちゃんの三色丼</h3>
             <p class="text-gray-600 mb-4">
-              シェフ特製の秘伝レシピで作る、当店自慢の限定カレー
+              鶏肉、卵、野菜の三色が美しく彩る、栄養バランス抜群の丼
             </p>
             <div class="flex justify-between items-center">
               <span class="text-2xl font-bold text-curry-600">¥1,000</span>
@@ -239,7 +235,7 @@ import Footer from '../components/Footer.astro';
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">沖縄タコライス</h3>
             <p class="text-gray-600 mb-4">
-              ひき肉と野菜の旨味が凝縮された、食べ応え抜群のドライカレー
+              沖縄名物のスパイシーなお肉とフレッシュ野菜が楽しめる一皿
             </p>
             <div class="flex justify-between items-center">
               <span class="text-2xl font-bold text-curry-600">¥1,000</span>
@@ -261,10 +257,10 @@ import Footer from '../components/Footer.astro';
           豊かな自然に囲まれた店舗で、皆さまのご来店を心よりお待ちしております。
         </p>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-        <div data-aos="fade-right" class="flex flex-col h-full">
-          <h3 class="text-2xl font-semibold mb-1 text-curry-700">店舗情報</h3>
-          <div class="flex-1 flex flex-col justify-center space-y-8 min-h-80">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-start">
+        <div data-aos="fade-right" class="lg:flex lg:flex-col lg:h-full">
+          <h3 class="text-2xl font-semibold mb-6 lg:mb-1 text-curry-700">店舗情報</h3>
+          <div class="space-y-6 lg:flex-1 lg:flex lg:flex-col lg:justify-center lg:space-y-8 lg:min-h-80">
             <div class="flex items-start space-x-4">
               <span class="text-curry-600 mt-1">📍</span>
               <div>
@@ -297,9 +293,9 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         <div data-aos="fade-left">
-          <div class="mt-10">
+          <div class="mt-8 lg:mt-10">
             <div class="rounded-lg overflow-hidden">
-              <img src="/hattori_pictures/screenshot_map01.webp" alt="店舗周辺地図" class="w-full h-full object-cover" />
+              <img src="/hattori_pictures/screenshot_map01.webp" alt="店舗周辺地図" class="w-full h-64 lg:h-80 object-cover" />
             </div>
           </div>
         </div>
