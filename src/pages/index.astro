@@ -250,15 +250,29 @@ import Footer from '../components/Footer.astro';
 
   <!-- アクセスセクション -->
   <section id="access" class="section-padding bg-white w-full max-w-full overflow-hidden mt-10 pb-10">
-    <div class="container-custom px-8 md:px-12 lg:px-16">
-      <div class="text-center mb-10">
+    <div class="container-custom px-2 sm:px-4 md:px-12 lg:px-16">
+      <div class="text-center mb-2 sm:mb-8">
         <h2 class="text-4xl font-bold mb-2 text-blue-900 drop-shadow">アクセス</h2>
-        <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-12 leading-relaxed">
-          豊かな自然に囲まれた店舗で、皆さまのご来店を心よりお待ちしております。
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-2 leading-relaxed">
+          皆さまのご来店を心よりお待ちしております。
         </p>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-start">
-        <div data-aos="fade-right" class="lg:flex lg:flex-col lg:h-full">
+      <div data-aos="fade-left" class="px-0 sm:px-0">
+        <div class="mb-6 md:mb-8 lg:mb-10">
+          <div class="rounded-lg overflow-hidden shadow-lg">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d696.7331770843185!2d139.70027368058308!3d35.73747287050003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018934a92d8716d%3A0xcf534761942170c!2z44Kr44O844K177y077y0!5e0!3m2!1sja!2sjp!4v1751756596447!5m2!1sja!2sjp" 
+              class="w-full h-72 sm:h-80 md:h-96 lg:h-[450px] xl:h-[500px]"
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-20 items-start">
+        <div data-aos="fade-right" class="lg:flex lg:flex-col lg:h-full px-2 sm:px-0">
           <h3 class="text-2xl font-semibold mb-6 lg:mb-1 text-curry-700">店舗情報</h3>
           <div class="space-y-6 lg:flex-1 lg:flex lg:flex-col lg:justify-center lg:space-y-8 lg:min-h-80">
             <div class="flex items-start space-x-4">
@@ -289,13 +303,6 @@ import Footer from '../components/Footer.astro';
                 <p class="font-medium">アクセス</p>
                 <p class="text-gray-600">東京メトロ有楽町線・副都心線 要町駅 徒歩10分</p>
               </div>
-            </div>
-          </div>
-        </div>
-        <div data-aos="fade-left">
-          <div class="mt-8 lg:mt-10">
-            <div class="rounded-lg overflow-hidden">
-              <img src="/hattori_pictures/screenshot_map01.webp" alt="店舗周辺地図" class="w-full h-64 lg:h-80 object-cover" />
             </div>
           </div>
         </div>
