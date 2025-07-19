@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lauter-brunnen-curry.pages.dev/sitemap.xml 
