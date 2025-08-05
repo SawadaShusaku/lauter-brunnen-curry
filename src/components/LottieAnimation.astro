@@ -1,0 +1,13 @@
+---
+const { containerClass, src = "https://lottie.host/bacb5e57-05cf-4715-acc1-ba2fcfccfd66/PiznSVkmZh.lottie" } = Astro.props;
+---
+
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+
+<dotlottie-wc 
+  src={src}
+  autoplay 
+  loop
+  class={containerClass}
+  style="width: 100%; height: 100%; transform: scale(1.2);"
+></dotlottie-wc>

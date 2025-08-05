@@ -2,56 +2,110 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import LottieAnimation from '../components/LottieAnimation.astro';
 ---
 
 <Layout title="Lauter Brunnen - 要町の隠れ家カレー＆弁当屋" description="豊島区要町の隠れ家カレー＆弁当屋「Lauter Brunnen」。本格スパイスカレー、から揚げ弁当、沖縄タコライスなどをテイクアウトで提供。要町駅徒歩10分。">
   <Header />
   
   <!-- ヒーローセクション -->
-  <section id="home" class="relative h-[80vh] flex items-center justify-center overflow-hidden">
-    <img src="/hattori_pictures/hattori_zigazou.png" alt="要町の隠れ家カレー＆弁当屋「Lauter Brunnen」" class="absolute inset-0 w-full h-full object-cover object-center z-0" />
-    <div class="absolute inset-0 bg-gradient-to-br from-curry-50/70 to-curry-800/80 z-10"></div>
-    <div class="absolute inset-0 bg-black/20 z-20"></div>
-    <div class="relative z-30 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto -mt-24 sm:-mt-28 lg:-mt-36">
-      <h1 
-        class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-blue-900 drop-shadow-lg" 
-        data-aos="zoom-in-bidirectional" 
-        data-aos-duration="1200" 
-        data-aos-delay="300"
-        data-aos-anchor-placement="center-bottom"
-        data-aos-mirror="true"
-      >
-        Lauter Brunnen
-      </h1>
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-curry-600 drop-shadow-lg" data-aos="fade-up" data-aos-delay="400">
-        要町の隠れ家カレー＆弁当屋
-      </h2>
-      <p class="text-lg sm:text-xl md:text-2xl mb-8 text-white/90 px-2 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-        本場のスパイスを独自にブレンドした<br><span class="font-bold text-curry-400 underline decoration-curry-600">香り高い本格カレー</span>と<span class="font-bold text-curry-400">美味しい弁当</span>をテイクアウト。<br><br>心も体も満たされるひとときをお届けします。
-      </p>
+  <section id="home" class="relative h-screen overflow-hidden">
+    <!-- 背景スライドショー -->
+    <div class="custom-slider absolute inset-0 w-full h-full">
+      <div class="slide-container">
+        <div class="slide active" data-slide="0">
+          <img src="/hattori_pictures/spice_curry-resize.webp" alt="要町の隠れ家カレー＆弁当屋「Lauter Brunnen」スパイスカレー" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="slide" data-slide="1">
+          <img src="/hattori_pictures/tomochan_keemacurry.webp" alt="要町の隠れ家カレー＆弁当屋「Lauter Brunnen」キーマカレー" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="slide" data-slide="2">
+          <img src="/hattori_pictures/volume_karaage-resize.webp" alt="要町の隠れ家カレー＆弁当屋「Lauter Brunnen」ボリュームから揚げ弁当" class="w-full h-full object-cover object-center" />
+        </div>
+      </div>
+      <!-- ナビゲーションボタン -->
+      <button class="slide-nav prev-btn" aria-label="前のスライド">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15,18 9,12 15,6"></polyline>
+        </svg>
+      </button>
+      <button class="slide-nav next-btn" aria-label="次のスライド">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9,18 15,12 9,6"></polyline>
+        </svg>
+      </button>
+      <!-- ページネーション -->
+      <div class="slide-pagination">
+        <button class="pagination-dot active" data-slide="0" aria-label="スライド1"></button>
+        <button class="pagination-dot" data-slide="1" aria-label="スライド2"></button>
+        <button class="pagination-dot" data-slide="2" aria-label="スライド3"></button>
+      </div>
+    </div>
+    
+    <!-- オーバーレイ（画像を少し暗くして文字を読みやすく） -->
+    <div class="absolute inset-0 bg-black/40 z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-20"></div>
+    
+    <!-- コンテンツ -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center z-30 pt-16">
+      <div class="text-center px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <h1 
+          class="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 text-blue-600 drop-shadow-2xl" 
+          data-aos="zoom-in-bidirectional" 
+          data-aos-duration="1200" 
+          data-aos-delay="300"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-mirror="true"
+        >
+          Lauter Brunnen
+        </h1>
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold mb-8 text-curry-300 drop-shadow-xl" data-aos="fade-up" data-aos-delay="400">
+          要町の隠れ家カレー＆弁当屋
+        </h2>
+        <p class="text-lg sm:text-xl md:text-2xl mb-12 text-white/95 px-2 leading-relaxed drop-shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          本場のスパイスを独自にブレンドした<br><span class="font-bold text-curry-300 underline decoration-curry-400">香り高い本格カレー</span>と<span class="font-bold text-curry-300">美味しい弁当</span>をテイクアウト。<br><br>心も体も満たされるひとときをお届けします。
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- コンセプトセクション -->
-  <section id="concept" class="section-padding bg-white w-full max-w-full overflow-hidden pb-20">
-    <div class="container-custom">
+  <section id="concept" class="section-padding w-full max-w-full overflow-hidden pb-20 relative min-h-[60vh] md:min-h-[70vh]">
+    <!-- 店舗写真（背景） -->
+    <div class="absolute inset-0 w-full h-full">
+      <img 
+        src="/hattori_pictures/hattori_zigazou.png" 
+        alt="要町の隠れ家カレー＆弁当屋「Lauter Brunnen」店舗と店主" 
+        class="w-full h-full object-cover object-center md:object-[center_40%] scale-110 md:scale-100" 
+      />
+      <!-- より視認性の高いオーバーレイ -->
+      <div class="absolute inset-0 bg-gradient-to-br from-white/70 via-white/70 to-curry-50/70 md:from-white/70 md:via-white/70 md:to-curry-50/70 from-white/85 via-white/85 to-curry-50/85"></div>
+      <div class="absolute inset-0 backdrop-blur-[2px] md:backdrop-blur-[2px] backdrop-blur-[3px]"></div>
+    </div>
+    
+    <div class="container-custom relative z-10">
       <div class="text-center mt-8 mb-22">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-blue-900 drop-shadow">「Lauter Brunnen」<br>のこだわり</h2>
-        <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-10">
-          <span class="font-bold text-curry-600"><span class="font-bold text-curry-600"><br>厳選スパイス</span>と<span class="underline decoration-curry-400">新鮮な食材</span>を贅沢に使用し、<span class="bg-curry-100 px-2 rounded">独自ブレンド</span>で仕上げたカレーと弁当は、
-          <br><span class="italic text-curry-700">香り・コク・旨味</span>の三拍子。<br><br>
-          ひと口ごとに広がるスパイスの奥深さと、<span class="font-semibold text-blue-900">手間ひまかけた手作り</span>の温もりを感じてください。<br>
-          <span class="text-curry-500 font-bold">「ここでしか味わえない一皿」</span>を、テイクアウトでお召し上がりください。
-          <br>
-          <br><br><span class="text-gray-600">要町駅徒歩10分の好立地です。<br><br>お気軽にお立ち寄りください。</span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-900 drop-shadow-md tracking-wide">「Lauter Brunnen」<br>のこだわり</h2>
+        <p class="text-lg text-gray-800 max-w-3xl mx-auto leading-relaxed mb-10 drop-shadow-sm tracking-wide px-6 sm:px-8 md:px-0">
+          <span class="font-bold text-curry-800 text-xl md:text-2xl"><br>厳選スパイス</span>と
+          <span class="font-bold text-curry-800 text-xl md:text-2xl">新鮮な食材</span>を贅沢に使用し、<br>
+          <span class="text-curry-900 font-medium">独自のブレンド</span>で仕上げたカレー・弁当は、
+          <br><span class="italic text-curry-900 font-medium text-xl">香り・コク・旨味</span>の三拍子です。<br>
+          <br><span class="font-semibold text-blue-950">ひと口ごとに広がるスパイスの奥深さ </span><br>をどうぞお楽しみください。<br>
+          <span class="text-curry-800 font-bold text-xl my-4 block drop-shadow">「当店自慢のワンプレート」</span>はテイクアウトでご提供いたします。
+          <br><br>
+          <br><br><span class="text-gray-800 font-medium tracking-wider">要町駅徒歩10分の好立地です。<br>お気軽にお立ち寄りください。</span><br>
           <br><br>
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mx-10">
         <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-20 h-20 bg-curry-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-3xl">🌶️</span>
+          <div class="w-28 h-28 sm:w-32 sm:h-32 relative mx-auto mb-8">
+            <LottieAnimation 
+              containerClass="absolute inset-0"
+              src="https://lottie.host/a8fd13b6-bf35-4fe9-9290-d2012ba59849/Xlxba0ZpQT.lottie"
+            />
           </div>
           <h3 class="text-xl font-semibold mb-4">本格スパイス</h3>
           <p class="text-gray-600">
@@ -60,8 +114,11 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-20 h-20 bg-curry-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-3xl">🥬</span>
+          <div class="w-28 h-28 sm:w-32 sm:h-32 relative mx-auto mb-8">
+            <LottieAnimation 
+              containerClass="absolute inset-0"
+              src="https://lottie.host/d07df785-b328-4a20-8811-37eb49013504/722yzfd4ow.lottie"
+            />
           </div>
           <h3 class="text-xl font-semibold mb-4">新鮮な野菜</h3>
           <p class="text-gray-600">
@@ -70,12 +127,15 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-          <div class="w-20 h-20 bg-curry-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-3xl">❤️</span>
+          <div class="w-28 h-28 sm:w-32 sm:h-32 relative mx-auto mb-8">
+            <LottieAnimation 
+              containerClass="absolute inset-0"
+              src="https://lottie.host/e7a9f374-e476-4695-b259-fdd8229cbf16/dr03DiknWG.lottie"
+            />
           </div>
-          <h3 class="text-xl font-semibold mb-4">愛情込めて</h3>
+          <h3 class="text-xl font-semibold mb-4">手作りにこだわり</h3>
           <p class="text-gray-600">
-            一皿一皿、心を込めて手作り。お客様に笑顔をお届けすることが私たちの喜びです。
+            一皿一皿、丁寧に作っています。素材の味を活かした手作りの味をお楽しみください。
           </p>
         </div>
       </div>
@@ -90,7 +150,7 @@ import Footer from '../components/Footer.astro';
           メニュー
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          こだわりの食材で作る、バラエティ豊かなカレーと弁当を、テイクアウトでお召し上がりください。
+          こだわりの食材で作る、カレーとお弁当を、お持ち帰りいただけます。
         </p>
       </div>
 
@@ -245,4 +305,11 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <Footer />
+
+<style>
+  @import '../styles/slider.css';
+</style>
+
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+<script src="../scripts/slider.js"></script>
 </Layout>

@@ -1,29 +1,33 @@
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm w-full overflow-hidden">
+<style>
+  @import '../styles/header.css';
+</style>
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/40 backdrop-blur-lg w-full overflow-hidden transition-all duration-300">
   <nav class="w-full max-w-full">
-    <div class="flex items-center justify-between h-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <!-- ロゴ -->
       <div class="flex items-center flex-shrink-0">
-        <a href="/" class="text-xl sm:text-2xl font-bold text-blue-900 whitespace-nowrap">
+        <a href="/" class="text-xl sm:text-2xl font-bold text-blue-600 whitespace-nowrap hover:text-blue-500 transition-colors drop-shadow-sm">
           🍛 Lauter Brunnen
         </a>
-        <span class="text-xs sm:text-sm text-curry-600 ml-1 sm:ml-2 font-medium">
-          〜要町の隠れ家風カレー店〜
+        <span class="text-xs sm:text-sm text-curry-500 ml-1 sm:ml-2 font-medium drop-shadow-sm">
+          〜要町の隠れ家カレー＆弁当屋〜
         </span>
       </div>
 
       <!-- デスクトップナビゲーション -->
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-8">
-          <a href="#home" class="text-gray-700 hover:text-curry-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap">
+          <a href="#home" class="nav-link text-gray-800 hover:text-orange-500 px-3 py-2 text-sm transition-all duration-300 whitespace-nowrap hover:scale-105">
             ホーム
           </a>
-          <a href="#concept" class="text-gray-700 hover:text-curry-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap">
+          <a href="#concept" class="nav-link text-gray-800 hover:text-orange-500 px-3 py-2 text-sm transition-all duration-300 whitespace-nowrap hover:scale-105">
             コンセプト
           </a>
-          <a href="#menu" class="text-gray-700 hover:text-curry-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap">
+          <a href="#menu" class="nav-link text-gray-800 hover:text-orange-500 px-3 py-2 text-sm transition-all duration-300 whitespace-nowrap hover:scale-105">
             メニュー
           </a>
-          <a href="#access" class="text-gray-700 hover:text-curry-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap">
+          <a href="#access" class="nav-link text-gray-800 hover:text-orange-500 px-3 py-2 text-sm transition-all duration-300 whitespace-nowrap hover:scale-105">
             アクセス
           </a>
         </div>
@@ -31,7 +35,7 @@
 
       <!-- モバイルメニューボタン -->
       <div class="md:hidden flex-shrink-0">
-        <button id="mobile-menu-button" class="text-gray-700 hover:text-curry-600 focus:outline-none p-2">
+        <button id="mobile-menu-button" class="text-white hover:text-curry-300 focus:outline-none p-2 transition-colors drop-shadow">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -41,17 +45,17 @@
 
     <!-- モバイルメニュー -->
     <div id="mobile-menu" class="md:hidden hidden w-full">
-      <div class="px-4 pt-2 pb-3 space-y-1 bg-white border-t max-w-full">
-        <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-curry-600 transition-colors">
+      <div class="px-4 pt-2 pb-3 space-y-1 bg-black/20 backdrop-blur-lg border-t border-white/10 max-w-full">
+        <a href="#home" class="nav-link block px-3 py-2 text-base text-gray-800 hover:text-orange-500 transition-all duration-300 hover:pl-4">
           ホーム
         </a>
-        <a href="#concept" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-curry-600 transition-colors">
+        <a href="#concept" class="nav-link block px-3 py-2 text-base text-gray-800 hover:text-orange-500 transition-all duration-300 hover:pl-4">
           コンセプト
         </a>
-        <a href="#menu" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-curry-600 transition-colors">
+        <a href="#menu" class="nav-link block px-3 py-2 text-base text-gray-800 hover:text-orange-500 transition-all duration-300 hover:pl-4">
           メニュー
         </a>
-        <a href="#access" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-curry-600 transition-colors">
+        <a href="#access" class="nav-link block px-3 py-2 text-base text-gray-800 hover:text-orange-500 transition-all duration-300 hover:pl-4">
           アクセス
         </a>
       </div>
@@ -59,35 +63,4 @@
   </nav>
 </header>
 
-<script>
-  // モバイルメニューの切り替え
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  mobileMenuButton?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
-  });
-
-  // スムーススクロール（ヘッダーの高さを考慮）
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const target = document.querySelector(targetId);
-      
-      if (target) {
-        // ヘッダーの高さ（56px）+ 余白（14px）を考慮
-        const headerHeight = 70;
-        const targetPosition = target.offsetTop - headerHeight;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-        
-        // モバイルメニューを閉じる
-        mobileMenu?.classList.add('hidden');
-      }
-    });
-  });
-</script> 
+<script src="../scripts/header.js"></script>
