@@ -1,4 +1,6 @@
 ---
+import ScrollToTop from '../components/ScrollToTop.astro';
+
 export interface Props {
   title: string;
   description?: string;
@@ -28,6 +30,7 @@ const { title, description = "豊島区要町の隠れ家カレー＆弁当屋�
   </head>
   <body>
     <slot />
+    <ScrollToTop />
   </body>
 </html>
 
