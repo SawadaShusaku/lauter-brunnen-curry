@@ -7,7 +7,10 @@ class CustomSlider {
     this.autoplayInterval = null;
     this.autoplayDelay = 5000; // 5秒間隔
     this.touchStartX = 0;
+    this.touchStartY = 0;
     this.touchMoveX = 0;
+    this.touchMoveY = 0;
+    this.isHorizontalSwipe = false;
     
     this.init();
   }
@@ -61,27 +64,45 @@ class CustomSlider {
       // タッチ操作（スワイプ）
       this.slider.addEventListener('touchstart', (e) => {
         this.touchStartX = e.touches[0].clientX;
+        this.touchStartY = e.touches[0].clientY;
+        this.isHorizontalSwipe = false;
         this.stopAutoplay();
-      });
+      }, { passive: false });
 
       this.slider.addEventListener('touchmove', (e) => {
-        this.touchMoveX = e.touches[0].clientX;
-      });
+        if (e.cancelable && this.isHorizontalSwipe) {
+          e.preventDefault(); // スクロールを防止
+        }
 
-      this.slider.addEventListener('touchend', () => {
-        const swipeDistance = this.touchStartX - this.touchMoveX;
-        
-        // 50px以上のスワイプで反応
-        if (Math.abs(swipeDistance) > 50) {
-          if (swipeDistance > 0) {
-            this.nextSlide();
-          } else {
-            this.prevSlide();
+        this.touchMoveX = e.touches[0].clientX;
+        this.touchMoveY = e.touches[0].clientY;
+
+        // 水平方向のスワイプかどうかを判定
+        if (!this.isHorizontalSwipe) {
+          const deltaX = Math.abs(this.touchMoveX - this.touchStartX);
+          const deltaY = Math.abs(this.touchMoveY - this.touchStartY);
+          if (deltaX > deltaY && deltaX > 10) {
+            this.isHorizontalSwipe = true;
+          }
+        }
+      }, { passive: false });
+
+      this.slider.addEventListener('touchend', (e) => {
+        if (this.isHorizontalSwipe) {
+          const swipeDistance = this.touchStartX - this.touchMoveX;
+          
+          // 50px以上のスワイプで反応
+          if (Math.abs(swipeDistance) > 50) {
+            if (swipeDistance > 0) {
+              this.nextSlide();
+            } else {
+              this.prevSlide();
+            }
           }
         }
         
         this.startAutoplay();
-      });
+      }, { passive: false });
     }
   }
 
