@@ -7,13 +7,7 @@ class CustomSlider {
     this.autoplayInterval = null;
     this.autoplayDelay = 5000; // 5秒間隔
     this.touchStartX = 0;
-    this.touchStartY = 0;
-    this.touchEndX = 0;
-    this.touchEndY = 0;
-    this.minSwipeDistance = 50; // スワイプを検知する最小距離（px）
-    this.maxSwipeTime = 300; // スワイプを検知する最大時間（ms）
-    this.touchStartTime = 0;
-    this.isSwiping = false;
+    this.touchMoveX = 0;
     
     this.init();
   }
@@ -63,77 +57,32 @@ class CustomSlider {
     if (this.slider) {
       this.slider.addEventListener('mouseenter', () => this.stopAutoplay());
       this.slider.addEventListener('mouseleave', () => this.startAutoplay());
+
+      // タッチ操作（スワイプ）
+      this.slider.addEventListener('touchstart', (e) => {
+        this.touchStartX = e.touches[0].clientX;
+        this.stopAutoplay();
+      });
+
+      this.slider.addEventListener('touchmove', (e) => {
+        this.touchMoveX = e.touches[0].clientX;
+      });
+
+      this.slider.addEventListener('touchend', () => {
+        const swipeDistance = this.touchStartX - this.touchMoveX;
+        
+        // 50px以上のスワイプで反応
+        if (Math.abs(swipeDistance) > 50) {
+          if (swipeDistance > 0) {
+            this.nextSlide();
+          } else {
+            this.prevSlide();
+          }
+        }
+        
+        this.startAutoplay();
+      });
     }
-
-    // タッチ操作（スワイプ）
-    this.slider.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
-    this.slider.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: true });
-    this.slider.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: true });
-  }
-
-  handleTouchStart(e) {
-    this.touchStartX = e.touches[0].clientX;
-    this.touchStartY = e.touches[0].clientY;
-    this.touchStartTime = Date.now();
-    this.isSwiping = true;
-    this.stopAutoplay(); // スワイプ中は自動再生を停止
-  }
-
-  handleTouchMove(e) {
-    if (!this.isSwiping) return;
-
-    this.touchEndX = e.touches[0].clientX;
-    this.touchEndY = e.touches[0].clientY;
-
-    // 縦方向のスワイプを検知したらスライド操作をキャンセル
-    const deltaY = Math.abs(this.touchEndY - this.touchStartY);
-    const deltaX = Math.abs(this.touchEndX - this.touchStartX);
-    if (deltaY > deltaX) {
-      this.isSwiping = false;
-      return;
-    }
-
-    // スワイプ中のスライドのトランジション
-    const diff = this.touchEndX - this.touchStartX;
-    const progress = Math.min(Math.abs(diff) / this.slider.offsetWidth, 1);
-    
-    // スライドの移動をアニメーション
-    this.slides.forEach(slide => {
-      slide.style.transition = 'none';
-    });
-  }
-
-  handleTouchEnd(e) {
-    if (!this.isSwiping) {
-      this.startAutoplay();
-      return;
-    }
-
-    const touchEndTime = Date.now();
-    const touchDuration = touchEndTime - this.touchStartTime;
-    const deltaX = this.touchEndX - this.touchStartX;
-    const deltaY = Math.abs(this.touchEndY - this.touchStartY);
-    
-    // スワイプの条件をチェック
-    if (
-      Math.abs(deltaX) > this.minSwipeDistance && // 最小距離
-      touchDuration < this.maxSwipeTime && // 最大時間
-      Math.abs(deltaX) > deltaY // 横方向の移動が縦方向より大きい
-    ) {
-      if (deltaX > 0) {
-        this.prevSlide();
-      } else {
-        this.nextSlide();
-      }
-    }
-
-    // スライドのトランジションを元に戻す
-    this.slides.forEach(slide => {
-      slide.style.transition = '';
-    });
-
-    this.isSwiping = false;
-    this.startAutoplay(); // スワイプ終了後に自動再生を再開
   }
 
   goToSlide(index) {
